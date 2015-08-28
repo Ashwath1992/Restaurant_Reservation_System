@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Restaurant Reservation</title>
+    <link rel="shortcut icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" type="text/css" href="styles/libraries/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/libraries/bootstrap-theme.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:700,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/custom-style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="nav=icon" href="#">
+                        <img class="nav-icon" src="symbol.jpg" alt="Restaurant Symbol"></a>
+                </div>
+                <div class="navbar-collapse collapse" style="height: auto;">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <button type="button" class="nav-btn" onclick="showDialog('guest1','guest2')" title="Want to Reserve a Table?">
+                                <i class="fa fa-users fa-lg font-aws"></i>
+                                    Guest?
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="nav-btn" onclick="showDialog('owner1','owner2')" title="Login Required!">
+                                <i class="fa fa-user-secret fa-lg font-aws"></i>
+                                Owner?</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="dater">
+            <div class="container-clock">
+                <p id="clockbox"></p>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="banner">
+            <h1 class="h1-style animation">Reserve your Place Now!</h1>
+            <h3 class="h3-style animation">for Authentic, Indian Food</h3>
+            <h4 class="tagline animation">
+                <i class="fa fa-star star"></i>
+                    Best Rated Indian Restaurant in Chicago Area
+                <i class="fa fa-star star"></i>
+            </h4>
+        </div>
+        <div class="container">
+            <div class="overlay" id="guest1">
+            </div>
+            <div class="user-dialog border-style animation" id="guest2" >
+                <h4 class="h4-style">Make your Reservation Now!</h4>
+                <form role="form">
+                    <div class="form-group">
+                        <label for="reserveName">Name</label>
+                        <input type="text" class="form-control" id="reserveName" placeholder="Enter Your Full Name">
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="reserveDate">Date</label>
+                                <input type="date" class="form-control" id="reserveDate" placeholder="MM/DD/YYYY">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="reserveTime">Time</label>
+                                <input type="time" class="form-control" id="reserveTime" placeholder="HH:MM">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reservePhone">Phone</label>
+                        <input type="tel" class="form-control" id="reservePhone" placeholder="Enter Your Phone">
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="reserveSize">Party Size</label>
+                                <input type="number" class="form-control" id="reserveSize" placeholder="# Guests">
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <label for="reserveEmail">Email</label>
+                                <input type="email" class="form-control" id="reserveEmail" placeholder="example@domain.com">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="reserveOcassion">Special Occasion Any</label>
+                                <input type="text" class="form-control" id="reserveOcassion" placeholder="e.g. Birthday, Anniversary, None etc.">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="reserveSpecial">Special Need Any</label>
+                                <input type="text" class="form-control" id="reserveSpecial" placeholder="e.g. HighChair, WheelChair, None etc. ">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center btn-style">
+                        <button type="submit" class="btn large-btn btn-primary btn-blue">Reserve</button>
+                        <button type="button" class="btn btn-warning" onclick="showDialog('guest1','guest2')">Cancel</button>
+                        <button type="button" class="btn btn-link" onclick="showDialog('guest2')">Edit Existing Reservation</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="overlay" id="owner1">
+        </div>
+        <div class="owner-dialog border-style animation" id="owner2">
+            <h4 class="h4-style">Owner's Login</h4>
+            <form role="form">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="example@domain.com">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password">
+                </div>
+                <div class="text-center btn-style">
+                    <button type="submit" class="btn large-btn btn-primary btn-blue">Submit</button>
+                    <button type="button" class="btn btn-warning" onclick="showDialog('owner1','owner2')">Cancel</button>
+                    <button type="button" class="btn btn-link">Forgot Password?</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="scripts/libraries/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="scripts/libraries/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/custom-script.js"></script>
+
+</body>
+</html>

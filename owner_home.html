@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Restaurant Reservation</title>
+    <link rel="shortcut icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" type="text/css" href="styles/libraries/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/libraries/bootstrap-theme.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:700,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/custom-style.css">
+    <link rel="stylesheet" type="text/css" href="styles/toggle-switch.css">
+</head>
+<body>
+    <header>
+        <div class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="nav=icon" href="#">
+                        <img class="nav-icon" src="symbol.jpg" alt="Restaurant Symbol"></a>
+                </div>
+                <div class="navbar-collapse collapse" style="height: auto;">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <button type="button" class="nav-btn" title="Owner's Main Screen">
+                                <i class="fa fa-home fa-lg font-aws"></i>
+                                Home
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="nav-btn" onclick="showDialog('guest1','guest2')" title="Exit Owner's Area">
+                                <i class="fa fa-sign-out fa-lg font-aws"></i>
+                                Logout
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="dater">
+            <div class="container-clock">
+                <p id="clockbox"></p>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container" id="ownerHome">
+            <ul class="nav nav-tabs nav-justified">
+                <li class="active">
+                    <a href="#tab-reservation" data-toggle="tab">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                        <span class="tab-text">Reservations</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#tab-seating" data-toggle="tab">
+                        <span class="glyphicon glyphicon-th"></span>
+                        <span class="tab-text">Seating</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#tab-profile" data-toggle="tab">
+                        <span class="glyphicon glyphicon-cog"></span>
+                        <span class="tab-text">Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#tab-contacts" data-toggle="tab">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <span class="tab-text">Contacts</span>
+                    </a>
+                </li>
+            </ul>
+            <div id="content" class="tab-content">
+                <div class="tab-pane active" id="tab-reservation">
+                    <h6>Reservation List</h6>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search Reservation" id="inputSearch">
+                        <div class="input-group-btn">
+                            <button class="btn btn-warning" type="submit"><i class="glyphicon glyphicon-search" title="Search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                    <table class="table table-condensed table-hover">
+                        <thead>
+                        <tr>
+                            <th>CNF No.</th>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>No. of Guests</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>CNF2357</td>
+                            <td>Ashwath Suresh Hegde</td>
+                            <td>07/29/2015 5:30PM</td>
+                            <td>3</td>
+                            <td>
+                                <button class="btn btn-danger" title="Show Details" >
+                                    <span class="glyphicon glyphicon-share"></span>
+                                    <span class="btn-text">Details</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CNF2351</td>
+                            <td>Ashwath Suresh Hegde</td>
+                            <td>07/29/2015 5:00PM</td>
+                            <td>4</td>
+                            <td>
+                                <button class="btn btn-danger" title="Show Details">
+                                    <span class="glyphicon glyphicon-share"></span>
+                                    <span class="btn-text">Details</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>WAT2247</td>
+                            <td>Ashwath Suresh Hegde</td>
+                            <td>08/01/2015 7:00PM</td>
+                            <td>6</td>
+                            <td>
+                                <button class="btn btn-danger" title="Show Details">
+                                    <span class="glyphicon glyphicon-share"></span>
+                                    <span class="btn-text">Details</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>WAT1267</td>
+                            <td>Ashwath Suresh Hegde</td>
+                            <td>06/21/2015 3:30PM</td>
+                            <td>2</td>
+                            <td>
+                                <button class="btn btn-danger" title="Show Details">
+                                    <span class="glyphicon glyphicon-share"></span>
+                                    <span class="btn-text">Details</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CNF4557</td>
+                            <td>Ashwath Suresh Hegde</td>
+                            <td>08/05/2015 8:30PM</td>
+                            <td>4</td>
+                            <td>
+                                <button class="btn btn-danger" title="Show Details">
+                                    <span class="glyphicon glyphicon-share"></span>
+                                    <span class="btn-text">Details</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CNF2357</td>
+                            <td>Ashwath Suresh Hegde</td>
+                            <td>07/29/2015 5:30PM</td>
+                            <td>3</td>
+                            <td>
+                                <button class="btn btn-danger" title="Show Details">
+                                    <span class="glyphicon glyphicon-share"></span>
+                                    <span class="btn-text">Details</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CNF2357</td>
+                            <td>Ashwath Suresh Hegde</td>
+                            <td>07/29/2015 5:30PM</td>
+                            <td>3</td>
+                            <td>
+                                <button class="btn btn-danger" title="Show Details">
+                                    <span class="glyphicon glyphicon-share"></span>
+                                    <span class="btn-text">Details</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>WAT5418</td>
+                            <td>Ashwath Suresh Hegde</td>
+                            <td>06/19/2015 1:30PM</td>
+                            <td>7</td>
+                            <td>
+                                <button class="btn btn-danger" title="Show Details">
+                                    <span class="glyphicon glyphicon-share"></span>
+                                    <span class="btn-text">Details</span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CNF2357</td>
+                            <td>Ashwath Suresh Hegde</td>
+                            <td>07/29/2015 5:30PM</td>
+                            <td>3</td>
+                            <td>
+                                <button class="btn btn-danger" title="Show Details">
+                                    <span class="glyphicon glyphicon-share"></span>
+                                    <span class="btn-text">Details</span>
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    <nav>
+                        <ul class="pager">
+                            <li class="previous"><a href="#" class="nav-text">Previous</a></li>
+                            <li class="next"><a href="#" class="nav-text">Next</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="tab-pane" id="tab-seating">
+                    <h6>Seating Area</h6>
+                    <div class="container">
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="table-responsive">
+                            <table class="table table-condensed table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Table No.</th>
+                                    <th>No. of Guests</th>
+                                    <th>Status</th>
+                                    <th>CNF No.</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>Available</td>
+                                    <td>
+                                        <span class="btn-filler"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>4</td>
+                                    <td>Occupied</td>
+                                    <td>
+                                        <button type="button" class="btn btn-link">CNF2357</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>Occupied</td>
+                                    <td>
+                                        <button type="button" class="btn btn-link">CNF2357</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td>Occupied</td>
+                                    <td>
+                                        <button type="button" class="btn btn-link">CNF2357</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>Available</td>
+                                    <td>
+                                        <span class="btn-filler"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>4</td>
+                                    <td>Occupied</td>
+                                    <td>
+                                        <button type="button" class="btn btn-link">CNF2357</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>4</td>
+                                    <td>Available</td>
+                                    <td>
+                                        <span class="btn-filler"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>4</td>
+                                    <td>Occupied</td>
+                                    <td>
+                                        <button type="button" class="btn btn-link">CNF2357</button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="container">
+                                <div class="col-md-4">
+                                    <div class="seats img-circle">
+                                        <p>Table # 3</p>
+                                        <p>Available</p>
+                                        <p>
+                                            <span class="btn-filler"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="seats img-circle">
+                                        <p>Table # 1</p>
+                                        <p>Occupied</p>
+                                        <p>
+                                            <button type="button" class="btn btn-link">CNF2357</button>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="seats img-circle">
+                                        <p>Table # 2</p>
+                                        <p>Occupied</p>
+                                        <p>
+                                            <button type="button" class="btn btn-link">CNF2357</button>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="seats img-circle">
+                                        <p>Table # 5</p>
+                                        <p>Occupied</p>
+                                        <p>
+                                            <button type="button" class="btn btn-link">CNF2357</button>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="seats img-circle">
+                                        <p>Table # 1</p>
+                                        <p>Available</p>
+                                        <p>
+                                            <span class="btn-filler"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="seats img-circle">
+                                        <p>Table # 10</p>
+                                        <p>Occupied</p>
+                                        <p>
+                                            <button type="button" class="btn btn-link">CNF2357</button>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-md-offset-2">
+                                    <div class="seats img-circle">
+                                        <p>Table # 8</p>
+                                        <p>Available</p>
+                                        <p>
+                                            <span class="btn-filler"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-md-offset-2">
+                                    <div class="seats img-circle">
+                                        <p>Table # 4</p>
+                                        <p>Occupied</p>
+                                        <p>
+                                            <button type="button" class="btn btn-link">CNF2357</button>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab-profile">
+                    <div class="container">
+                        <h6>Profile</h6>
+                        <div class="col-xs-12 col-md-3">
+                            <span class="glyphicon glyphicon-user profile"></span>
+                        </div>
+                        <div class="col-xs-12 col-md-9">
+                            <div class="text-right">
+                                <button type="button" class="btn btn-info">Edit Profile</button>
+                            </div>
+                            <h1 class="rest-name">Restaurant Name</h1>
+                            <p class="left-head">Owner's Name: <span class="text-details">Ashwath Suresh Hegde</span></p>
+                            <p class="left-head">Address: <span class="text-details">3423 South Wallace St, Chicago Illinois - 60616</span></p>
+                            <p class="left-head">Phone No.: <span class="text-details">+1 312-972-9557</span></p>
+                            <p class="left-head">Email ID: <span class="text-details">hegde.ashwath1@gmail.com</span></p>
+                            <p class="left-head">Fax No.: <span class="text-details">+1 312-972-9557</span></p>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <h6 class="app-head">App Settings</h6>
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                            <label class="onoffswitch-label" for="myonoffswitch">
+                                <span class="onoffswitch-inner"></span>
+                                <span class="onoffswitch-switch"></span>
+                            </label>
+                        </div>
+                        <div class="text-right">
+                            <button type="button" class="btn btn-info">Edit Timings</button>
+                        </div>
+                        <p class="rest-head">Restaurant Open Days and Timings: </p>
+                        <div class="rest-times">
+                            <p class="left-head">Monday:  <span class="text-details">3:00 PM to 10:00 PM</span></p>
+                            <p class="left-head">Tuesday:  <span class="text-details">3:00 PM to 10:00 PM</span></p>
+                            <p class="left-head">Wednesday:  <span class="text-details">3:00 PM to 10:00 PM</span></p>
+                            <p class="left-head">Thursday:  <span class="text-details">3:00 PM to 10:00 PM</span></p>
+                            <p class="left-head">Friday:  <span class="text-details">3:00 PM to 10:00 PM</span></p>
+                            <p class="left-head">Saturday:  <span class="text-details">3:00 PM to 10:00 PM</span></p>
+                            <p class="left-head">Sunday:  <span class="text-details">3:00 PM to 10:00 PM</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab-contacts">
+                    <h6>Customer Contact's</h6>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Enter Contact Name or Phone." id="phoneSearch">
+                        <div class="input-group-btn">
+                            <button class="btn btn-warning" type="submit"><i class="glyphicon glyphicon-search" title="Search Contact"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-condensed table-striped">
+                            <thead>
+                            <tr>
+                                <th>Sl. No.</th>
+                                <th>Contact Name</th>
+                                <th>Contact Phone No.</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Ashwath Suresh Hegde</td>
+                                <td>+1 312-972-9557</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Ashwath Suresh Hegde</td>
+                                <td>+1 312-972-9557</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Ashwath Suresh Hegde</td>
+                                <td>+1 312-972-9557</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Ashwath Suresh Hegde</td>
+                                <td>+1 312-972-9557</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Ashwath Suresh Hegde</td>
+                                <td>+1 312-972-9557</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Ashwath Suresh Hegde</td>
+                                <td>+1 312-972-9557</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Ashwath Suresh Hegde</td>
+                                <td>+1 312-972-9557</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Ashwath Suresh Hegde</td>
+                                <td>+1 312-972-9557</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="scripts/libraries/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="scripts/libraries/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/custom-script.js"></script>
+</body>
+</html>
